@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses/courses.component';
 import { FaqComponent } from './faq/faq.component';
 import { PaymentsComponent } from './payments/payments.component';
+import { ProfileComponent } from './profile/profile.component';
+import { AuthModule } from './auth/auth.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
@@ -25,11 +27,13 @@ import {MatExpansionModule} from '@angular/material/expansion';
     CoursesComponent,
     FaqComponent,
     PaymentsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
+    AppRoutingModule,
+    AuthModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatToolbarModule,

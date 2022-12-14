@@ -1,0 +1,48 @@
+<div class="container">
+    <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+      <ng-content select="[header]"></ng-content>
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="t.shevchenko"
+          formControlName="username"
+          name="username"
+          #username
+        />
+        <mat-hint align="end">{{username.value.length}}/225</mat-hint>
+        <mat-error *ngIf="form.controls['username'].errors?.['required']">Username is required</mat-error>
+        <mat-error *ngIf="form.controls['username'].errors?.['minlength']">Min username length is 2</mat-error>
+        <mat-error *ngIf="form.controls['username'].errors?.['maxlength']">Max username length is 255</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="full-width">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="********"
+          formControlName="password"
+          name="password"
+          #password
+        />
+        <mat-hint align="end">{{password.value.length}}/225</mat-hint>
+        <mat-error *ngIf="form.controls['password'].errors?.['required']">Password is required</mat-error>
+        <mat-error *ngIf="form.controls['password'].errors?.['minlength']">Min password length is 6</mat-error>
+        <mat-error *ngIf="form.controls['password'].errors?.['maxlength']">Max password length is 255</mat-error>
+      </mat-form-field>
+      <ng-content select="[error]"></ng-content>
+
+      <ng-content select="[another]"></ng-content>
+  
+      <button
+        color="primary"
+        mat-raised-button
+        type="submit"
+        name="submit"
+        [disabled]="form.invalid || form.pending"
+      >
+        Submit
+      </button>
+    </form>
+  </div>

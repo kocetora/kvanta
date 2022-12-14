@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+  isAuthorised = true;
   navLinks: any[];
   activeLinkIndex = -1; 
   constructor(private router: Router) {
@@ -14,18 +15,27 @@ export class AppComponent {
       {
         label: 'Courses',
         link: './courses',
+        authRequired: false,
         index: 0
       },  
       {
         label: 'Payments',
         link: './payments',
+        authRequired: true,
         index: 1
       },  
       {
         label: 'FAQ',
         link: './faq',
+        authRequired: false,
         index: 3
-      },   
+      },  
+      {
+        label: 'Profile',
+        link: './profile',
+        authRequired: true,
+        index: 4
+      },
     ];
   }
   ngOnInit(): void {
