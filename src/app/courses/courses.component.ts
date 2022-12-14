@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CoursesService } from './courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./courses.component.less']
 })
 export class CoursesComponent {
+  courses: any;
 
+  constructor(private coursesService: CoursesService){}
+
+  ngOnInit(){
+    this.coursesService.getCourses().subscribe((courses: any) => this.courses = courses.products)
+  }
 }

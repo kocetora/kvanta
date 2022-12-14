@@ -1,38 +1,24 @@
-<mat-grid-list cols="2" rowHeight="1:1" [gutterSize]="'20px'">
-  <mat-grid-tile>
-    <mat-card>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-header>
-          <mat-card-title>
-            Japanese doggo
-          </mat-card-title>
-          <mat-card-subtitle>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-actions>
-          <button mat-flat-button color="accent">View more</button>
-        </mat-card-actions>
-      </mat-card>
-  </mat-grid-tile>
+<ng-container *ngIf="courses; else loading">
+  <mat-grid-list cols="2" rowHeight="1:1" [gutterSize]="'20px'">
+    <mat-grid-tile *ngFor="let course of courses">
+      <mat-card>
+          <img mat-card-image [src]="course.images[0]" alt="Photo of a Shiba Inu">
+          <mat-card-header>
+            <mat-card-title>
+              {{course.title}}
+            </mat-card-title>
+            <mat-card-subtitle>
+              {{course.description}}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-actions>
+            <button mat-flat-button color="accent">View more</button>
+          </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-container>
 
-  <mat-grid-tile>
-    <mat-card>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-header>
-          <mat-card-title>
-            Japanese doggo
-          </mat-card-title>
-          <mat-card-subtitle>
-            The Shiba Inu is 
-          </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-actions>
-          <button mat-flat-button color="accent">View more</button>
-        </mat-card-actions>
-      </mat-card>
-  </mat-grid-tile>
-</mat-grid-list>
-
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>
