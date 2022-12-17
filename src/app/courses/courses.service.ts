@@ -1,15 +1,26 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Injectable, Inject } from '@angular/core';
+import { API_URL } from '../shared/configs/injection-tokens';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class CoursesService {
-  private url = 'https://dummyjson.com/';
-
-  constructor(private httpClient: HttpClient) {}
+  headers: HttpHeaders;
+  constructor(
+    @Inject(API_URL) private _apiUrl: string,
+    private _httpClient: HttpClient
+  ) {
+    this.headers = new HttpHeaders()
+    // .set('Access-Control-Allow-Origin', '*')
+    // .set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE')
+    // .set('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
+  }
 
   getCourses() {
-    return this.httpClient.get(`${this.url}products`);
+    return this._httpClient.get(`${this._apiUrl}subjects`, {
+      headers: this.headers,
+    });
   }
 }

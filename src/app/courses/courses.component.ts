@@ -8,12 +8,19 @@ import { CoursesService } from './courses.service';
 })
 export class CoursesComponent implements OnInit {
   courses: any;
+  loading = true;
 
   constructor(private coursesService: CoursesService) {}
 
   ngOnInit() {
     this.coursesService
       .getCourses()
-      .subscribe((courses: any) => (this.courses = courses.products));
+      .subscribe((courses: any) => {
+        this.courses = courses;
+        this.loading = false;
+        // setTimeout(()=>this.loading = false, 3000)
+        
+      });
+      
   }
 }
