@@ -3,8 +3,6 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-payments',
   templateUrl: './payments.component.html',
-  styleUrls: ['./payments.component.less']
+  styleUrls: ['./payments.component.less'],
 })
-export class PaymentsComponent {
-
-}
+export class PaymentsComponent {}

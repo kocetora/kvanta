@@ -3,18 +3,18 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private isAuth = false;
   private url = 'https://dummyjson.com/';
-    
-  constructor(private httpClient: HttpClient) { }
-   
+
+  constructor(private httpClient: HttpClient) {}
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage['jwt'],
+      Authorization: 'Bearer ' + localStorage['jwt'],
     }),
   };
 

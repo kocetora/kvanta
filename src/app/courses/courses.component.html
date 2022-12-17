@@ -2,19 +2,23 @@
   <mat-grid-list cols="2" rowHeight="1:1" [gutterSize]="'20px'">
     <mat-grid-tile *ngFor="let course of courses">
       <mat-card>
-          <img mat-card-image [src]="course.images[0]" alt="Photo of a Shiba Inu">
-          <mat-card-header>
-            <mat-card-title>
-              {{course.title}}
-            </mat-card-title>
-            <mat-card-subtitle>
-              {{course.description}}
-            </mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-actions>
-            <button mat-flat-button color="accent">View more</button>
-          </mat-card-actions>
-        </mat-card>
+        <img
+          mat-card-image
+          [src]="course.images[0]"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-header>
+          <mat-card-title>
+            {{ course.title }}
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{ course.description }}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-flat-button color="accent">View more</button>
+        </mat-card-actions>
+      </mat-card>
     </mat-grid-tile>
   </mat-grid-list>
 </ng-container>

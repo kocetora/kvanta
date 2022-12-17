@@ -1,35 +1,35 @@
 <!-- *ngIf="courses; else loading" -->
 <ng-container>
-    <mat-grid-list cols="2" rowHeight="1:1" [gutterSize]="'20px'">
-        <!-- *ngFor="let course of courses" -->
-      <mat-grid-tile>
-        <mat-card>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-            <mat-card-header>
-              <mat-card-title>
-                course.title
-              </mat-card-title>
-              <mat-card-subtitle>
-                course.description
-              </mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-actions>
-              <button mat-flat-button color="accent">View more</button>
-              <button mat-button aria-label="Log In">
-                Оплачено
-                <mat-icon class="green">check</mat-icon>
-              </button>
-              <button mat-button aria-label="Log In">
-                Не оплачено
-                <mat-icon class="red">close</mat-icon>
-              </button>
-            </mat-card-actions>
-            <mat-icon></mat-icon>
-          </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </ng-container>
-  
-  <ng-template #loading>
-    <mat-spinner></mat-spinner>
-  </ng-template>
+  <mat-grid-list cols="2" rowHeight="1:1" [gutterSize]="'20px'">
+    <!-- *ngFor="let course of courses" -->
+    <mat-grid-tile>
+      <mat-card>
+        <img
+          mat-card-image
+          src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+          alt="Photo of a Shiba Inu"
+        />
+        <mat-card-header>
+          <mat-card-title> course.title </mat-card-title>
+          <mat-card-subtitle> course.description </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-flat-button color="accent">View more</button>
+          <button mat-button aria-label="Log In">
+            Оплачено
+            <mat-icon class="green">check</mat-icon>
+          </button>
+          <button mat-button aria-label="Log In">
+            Не оплачено
+            <mat-icon class="red">close</mat-icon>
+          </button>
+        </mat-card-actions>
+        <mat-icon></mat-icon>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

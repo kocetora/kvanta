@@ -6,10 +6,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.less']
+  styleUrls: ['./login.component.less'],
 })
 export class LoginComponent {
-  error: any
+  error: any;
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -25,15 +25,15 @@ export class LoginComponent {
         localStorage.setItem('userid', res.userid.toString());
         this.snackBar.open('You successfully logged in!:)', 'Close', {
           duration: 5000,
-          panelClass: 'success-snackbar'
+          panelClass: 'success-snackbar',
         });
         this.router.navigate(['/profile']);
       },
       (err) => {
-        this.error = err
+        this.error = err;
         this.snackBar.open('Wrong username or password', 'Close', {
           duration: 5000,
-          panelClass: 'error-snackbar'
+          panelClass: 'error-snackbar',
         });
       }
     );
