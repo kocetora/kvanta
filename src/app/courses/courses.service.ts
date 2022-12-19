@@ -13,9 +13,9 @@ export class CoursesService {
     private _httpClient: HttpClient
   ) {
     this.headers = new HttpHeaders()
-    // .set('Access-Control-Allow-Origin', '*')
-    // .set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE')
-    // .set('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
+      .set('Access-Control-Allow-Origin', '*')
+      .set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE')
+      .set('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
   }
 
   getCourses() {
