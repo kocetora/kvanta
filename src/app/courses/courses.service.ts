@@ -12,10 +12,7 @@ export class CoursesService {
     @Inject(API_URL) private _apiUrl: string,
     private _httpClient: HttpClient
   ) {
-    this.headers = new HttpHeaders()
-      .set('Access-Control-Allow-Origin', '*')
-      .set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE')
-      .set('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization, X-Request-With');
+    this.headers = new HttpHeaders();
   }
 
   getCourses() {
